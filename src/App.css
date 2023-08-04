@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+.App{
+  /* padding-top: 50px; */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.comment-section{
+  /* width: 50%; 
+  margin: 0 auto; */
+  background: #ff0000;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto auto 1fr auto auto auto;
+  gap: 24px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.comment-section .header, .comment-section .navigation, .comment-section .main, .comment-section .sidebar, .comment-section .ads, .comment-section .footer{
+  border: 1px solid black;
+}
+@media (min-width: 720px) {
+  .comment-section {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr auto;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 720px) {
+ 
+  /* // The header section takes 12 columns */
+  .comment-section .header {
+    grid-column: 1 / span 12;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* // The navigation section also takes 12 columns */
+  .comment-section .navigation {
+    grid-column: 1 / span 12;
+  }
+
+  /* // The main section takes 10 columns start from column 3 */
+  .comment-section .main {
+    grid-column: 2 / span 10;
+    grid-row: 3;
+  }
+
+  /* // The sidebar takes 2 columns start from column 1 */
+  .comment-section .sidebar {
+    grid-column: 1 / span 2;
+    /* grid-row: 3; */
+  }
+
+  /* // The ads section takes 2 columns start from column 1 */
+  .comment-section .ads {
+    grid-column: 1 / span 2;
+  }
+
+  /* // The footer section takes 10 columns start from column 3 */
+  .comment-section .footer {
+    grid-column: 3 / span 10;
   }
 }
+@media (min-width: 1020px) {
+
+  /* // The navigation takes 8 columns starting from column 3 */
+  .comment-section .navigation {
+    grid-column: 3 / span 8;
+  }
+
+  /* // The main section takes 8 columns starting from column 3 */
+  .comment-section .main {
+    grid-column: 3 / span 8;
+  }
+
+  /* // The sidebar starts from row 2 and ends at row 4 */
+  .comment-section .sidebar {
+    grid-row: 2 / 4
+  }
+
+  /* // The ads section takes 2 columns starting from column 11 */
+  /* // it also takes 2 rows starting from row 2 and ending at row 4 */
+  .comment-section .ads {
+    grid-column: 11 / span 2;
+    grid-row: 2 / 4;
+  }
+
+  /* // The footer section takes 12 columns start from column 1 */
+  .comment-section .footer {
+    grid-column: 1 / span 12;
+  }
+}
+/* .item-1{
+  background: red;
+}
+.item-2{
+  background: red;
+  grid-column-start: 6;
+  grid-column-end: 6;
+}
+.item-2{
+  background: red;
+  grid-column-start: 2;
+  grid-column-end: 6;
+} */

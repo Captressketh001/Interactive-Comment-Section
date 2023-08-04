@@ -1,0 +1,76 @@
+.comment-section .header {
+    grid-area: header;
+  }
+  .comment-section .navigation {
+    grid-area: nav;
+  }
+  .comment-section .main {
+    grid-area: main;
+  }
+  .comment-section .sidebar {
+    grid-area: sidebar;
+  }
+  .comment-section .ads {
+    grid-area: ads;
+  }
+  .comment-section .footer {
+    grid-area: footer;
+  }
+  .comment-section .header, .comment-section .navigation, .comment-section .main, .comment-section .sidebar, .comment-section .ads, .comment-section .footer{
+    border: 1px solid black;
+  }
+/* Mobile */
+  .comment-section {
+    display: grid;
+    height: 100vh;
+  
+    gap: 24px;
+  
+    /* // Creating 6 rows and 3rd row expands as much as it can   */
+    grid-template-rows: auto auto 1fr auto auto auto;
+  
+    /* // Defining the template */
+    grid-template-areas:
+      "header"
+      "nav"
+      "sidebar"
+      "main"
+      "ads"
+      "footer";
+  }
+  @media (min-width: 720px) {
+    .comment-section {
+      /* // Creating 4 rows and the 3rd row expands as much as it can */
+      grid-template-rows: auto auto 1fr auto;
+        
+      /* // Defining the template (3 columns) */
+      grid-template-areas:
+        "header header header"
+        "nav nav nav "
+        "sidebar main main"
+        "ads footer footer";
+    }
+  }
+  @media (min-width: 1020px) {
+    .comment-section {
+      /* // Creating 4 rows and the 3rd row expands as much as it can */
+      grid-template-rows: auto 1fr auto;
+        
+      /* // Defining the template (3 columns) */
+      grid-template-areas:
+        "header header header header"
+        "sidebar nav nav ads"
+        "sidebar main main ads"
+        "footer footer footer footer";
+    }
+  }
+  .footer-app div{
+    border: 1px solid red;
+  }
+  .footer-app{
+    display: grid;
+    gap: 24px;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }

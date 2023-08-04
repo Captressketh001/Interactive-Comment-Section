@@ -1,13 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Rubik', sans-serif;
+  background: hsl(228, 33%, 97%);
+  font-size: 16px;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+main{
+  margin: 2rem 0px;
+  width: 100%;
+  
+  /* background-color: red; */
+}
+.comment-section {
+  display: grid;
+  height: auto;
+  width: 50%;
+  margin: 1rem auto;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+
+}
+
+.comment-section .comment-box {
+  grid-column: 1 / span 12;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.comment-section .reply-box {
+  grid-column: 1 / span 12;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.comment-section .comment-input {
+  grid-column: 1 / span 12;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.comment-section .reply-input {
+  grid-column: 3 / span 10;
+  grid-row: 3;
+  background-color: hsl(0, 0%, 100%);
+}
+.comment-section .line{
+  grid-column: 2 / span 3;
+  grid-row: 3;
+  border-left: 1px solid hsl(223, 19%, 93%);
+}
+.comment-section .update-input {
+  grid-column: 1 / span 12;
+  grid-row: 3;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.comment-section .reply-box, .comment-section .reply-input, .comment-section .line{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .comment-section {
+    width: 90%;
+  }
+}
+
+.comment-section .comment-area,
+.comment-section .reply-input-area,
+.comment-section .reply-area, .comment-section .comment-input-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 5px;
+}
+
+
+
+.vote-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: hsl(228, 33%, 97%);
+  align-items: center;
+  padding: 0px 10px;
+  border-radius: 5px;
+  height: auto;
+}
+.vote-section img:hover{
+  cursor: pointer;
+}
+.comment-text {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.comment-text .user-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.comment-text .user-section img {
+  width: 30px;
+  height: 30px;
+}
+
+.comment-text .user-section .reply {
+  display: flex;
+  gap: 5px;
+}
+.comment-text .user-section .reply:hover{
+  cursor: pointer;
+  opacity: 0.2;
+}
+.comment-text .user-section .reply img {
+  width: 20px;
+  height: 20px;
+}
+
+.comment-text .user-section .week {
+  flex: 1;
+  color: hsl(211, 10%, 45%);
+}
+
+.comment-text .text {
+  color: hsl(211, 10%, 45%);
+}
+
+.comment-text .user-section .reply .text,
+.vote-section p {
+  color: hsl(238, 40%, 52%);
+}
+
+.comment-text .user-section .username {
+  color: hsl(211, 10%, 45%);
+}
+
+.reply-user {
+  height: 40px;
+  width: 40px;
+}
+
+.reply-text {
+  width: 100%;
+  height: 5rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid hsl(223, 19%, 93%);
+}
+
+.reply-text:hover {
+  border: 1px solid hsl(238, 40%, 52%);
+  cursor: pointer;
+}
+
+.reply-button {
+  height: 2.5rem;
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: hsl(238, 40%, 52%);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.reply-button:hover{
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+@media screen and (max-width:425px) {
+
+  .comment-area,
+  .reply-input-area {
+    flex-direction: column-reverse;
+
+  }
+
+  .vote-section {
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-around;
+  }
+
+  .comment-text .user-section .reply {
+    width: 100%;
+    position: relative;
+    justify-content: end;
+  }
+
+  .reply-area, .comment-input-area{
+    flex-wrap: wrap;
+  }
+
+  .reply-input {
+    grid-column: 2 / span 11;
+  }
+
+ .reply-text {
+    order: -1;
+  }
+
+ .reply-button {
+    width: 30%;
+  }
 }
