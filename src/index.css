@@ -20,14 +20,12 @@ main{
   /* background-color: red; */
 }
 .comment-section {
-  display: grid;
   height: auto;
-  width: 50%;
+  width: 60%;
   margin: 1rem auto;
-  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(12, 1fr);
   gap: 10px;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-section .comment-box {
@@ -46,9 +44,13 @@ main{
 }
 
 .comment-section .reply-input {
-  grid-column: 3 / span 10;
-  grid-row: 3;
+  /* grid-column: 3 / span 10;
+  grid-row: 3; */
   background-color: hsl(0, 0%, 100%);
+  width: 90%;
+    display: flex;
+    margin: 0 0 auto auto;
+
 }
 .comment-section .line{
   grid-column: 2 / span 3;
@@ -62,9 +64,16 @@ main{
 }
 
 .comment-section .reply-box, .comment-section .reply-input, .comment-section .line{
-  display: none;
+  display: block;
 }
-
+.wrapper, .comment-div{
+  display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.wrapper::before{
+  content: "";
+}
 @media screen and (max-width: 768px) {
   .comment-section {
     width: 90%;
@@ -127,7 +136,12 @@ main{
   width: 20px;
   height: 20px;
 }
-
+.user-section span{
+  background: hsl(238, 40%, 52%);
+  padding: 2px 9px;
+  border-radius: 4px;
+  color: #fff;
+}
 .comment-text .user-section .week {
   flex: 1;
   color: hsl(211, 10%, 45%);
